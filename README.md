@@ -8,7 +8,6 @@ data-structures-and-algorithms
 ├──code-challenges
 │  └── .gitignore
 │  └── for-each (branch)
-├── node_modules
 │
 ├── .eslintrc.json
 ├── .gitignore
