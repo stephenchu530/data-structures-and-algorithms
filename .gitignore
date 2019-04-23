@@ -119,10 +119,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#node_modules
-node_modules
 node_modules/
-/node_modules
-/node_modules/
+coverage/
 
 # End of https://www.gitignore.io/api/macos,linux,emacs,windows
