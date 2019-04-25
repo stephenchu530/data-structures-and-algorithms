@@ -167,14 +167,10 @@ const sortSchedule = (arr) => {
   // Solution code here...
   let DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   return arr.sort((a, b) => {
-    if (DAYS.indexOf(a.dayOfWeek) < DAYS.indexOf(b.dayOfWeek)) {
-      return -1;
-    } else if (DAYS.indexOf(a.dayOfWeek) > DAYS.indexOf(b.dayOfWeek)) {
-      return 1;
-    } else if (a.start < b.start) {
-      return -1;
-    } else if (a.start > b.start) {
-      return 1;
+    if (DAYS.indexOf(a.dayOfWeek) !== DAYS.indexOf(b.dayOfWeek)) {
+      return DAYS.indexOf(a.dayOfWeek) - DAYS.indexOf(b.dayOfWeek);
+    } else if (a.start !== b.start) {
+      return parseInt(a.start) - parseInt(b.start);
     } else {
       return parseInt(a.end) - parseInt(b.end);
     }
