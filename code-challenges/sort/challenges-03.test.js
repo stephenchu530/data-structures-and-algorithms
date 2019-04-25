@@ -116,11 +116,15 @@ const sortPeopleBetter = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
     if (a.lastName < b.lastName) {
-      a.lastName.localeCompare(b.lastName);
-    } else if (a.firstName !== b.firstName) {
-      a.firstName.localeCompare(b.firstName);
+      return -1;
+    } else if (a.lastName > b.lastName) {
+      return 1;
+    } else if (a.firstName < b.firstname) {
+      return -1;
+    } else if (a.firstName > b.firstName) {
+      return 1;
     } else {
-      a.age - b.age;
+      return a.age - b.age;
     }
   });
 };
@@ -168,13 +172,15 @@ const sortSchedule = (arr) => {
   let DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   return arr.sort((a, b) => {
     if (DAYS.indexOf(a.dayOfWeek) < DAYS.indexOf(b.dayOfWeek)) {
-      -1;
-    } else if (DAYS.indexOf(a.dayOfWeek) === DAYS.indexOf(b.dayOfWeek)) {
-      if (parseInt(a.start) < parseInt(b.start)) {
-        -1;
-      } else if (a.start === b.start) {
-        parseInt(a.end) - parseInt(b.end);
-      }
+      return -1;
+    } else if (DAYS.indexOf(a.dayOfWeek) > DAYS.indexOf(b.dayOfWeek)) {
+      return 1;
+    } else if (a.start < b.start) {
+      return -1;
+    } else if (a.start > b.start) {
+      return 1;
+    } else {
+      return parseInt(a.end) - parseInt(b.end);
     }
   });
 };
