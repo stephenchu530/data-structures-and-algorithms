@@ -6,11 +6,10 @@ The purpose of this repo is to help organize and curate DS and Algo coding chall
 ```sh
 data-structures-and-algorithms
 ├──code-challenges
-│  └── .gitignore
-│  └── for-each (branch)
-│  └── regex (branch)
-│  └── sort (branch)
-│  └── string-methods (branch)
+│  ├── for-each (branch)
+│  ├── regex (branch)
+│  ├── sort (branch)
+│  ├── string-methods (branch)
 │  └── value-vs-reference (branch)
 │
 ├── .eslintrc.json
