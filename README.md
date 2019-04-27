@@ -8,6 +8,10 @@ data-structures-and-algorithms
 ├──code-challenges
 │  └── .gitignore
 │  └── for-each (branch)
+│  └── regex (branch)
+│  └── sort (branch)
+│  └── string-methods (branch)
+│  └── value-vs-reference (branch)
 │
 ├── .eslintrc.json
 ├── .gitignore
