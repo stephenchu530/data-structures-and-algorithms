@@ -14,6 +14,7 @@ data-structures-and-algorithms
 │
 ├── .eslintrc.json
 ├── .gitignore
+├── LICENSE
 ├── package-lock.json
 ├── package.json
 └── README.md
