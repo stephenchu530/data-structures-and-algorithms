@@ -16,6 +16,9 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -27,10 +30,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
-
+const wordsToCharList = (arr) => arr.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -76,6 +76,7 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(item => result.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1)));
   return result;
 };
 
@@ -90,6 +91,7 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(item => result.push(item.split(' ').slice(2).join(' ')));
   return result;
 };
 
@@ -106,6 +108,7 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.steps.forEach(step => result.push(step.split(' ')[0]));
   return result;
 };
 
@@ -124,6 +127,11 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    while (arr[i] % 2 === 0) {
+      arr.splice(i, 1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,9 +149,7 @@ removeLastCharacters('Gregor', -2) returns 'Gregor'
 removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
-const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
-};
+const removeLastCharacters = (str, numberOfCharacters) => (numberOfCharacters > 0) ? str.slice(0, -numberOfCharacters) : str;
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,6 +161,7 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
+  str.split(',').forEach(num => total += parseInt(num));
   return total;
 };
 
@@ -167,9 +174,7 @@ Write a function named removeVowels that takes in a string and returns a new str
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
-const removeVowels = (str) => {
-  // Solution code here...
-};
+const removeVowels = (str) => str.match(/[^aeiou]/gi).join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -181,9 +186,7 @@ For example, extractVowels('gregor') returns ['grgr', 'eo'].
 Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioou']
 ------------------------------------------------------------------------------------------------ */
 
-const extractVowels = (str) => {
-  // Solution code here...
-};
+const extractVowels = (str) => [removeVowels(str), str.match(/[aeiou]/gi).sort().join('')];
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
