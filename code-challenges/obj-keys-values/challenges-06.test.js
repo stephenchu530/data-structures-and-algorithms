@@ -82,14 +82,14 @@ This function should take in an array of data and a character name and return a 
 
 For example:
 hasChildrenValues(characters, 'Cersei') will return true
-hasChildrenValues(characters, 'Eddard') will return false
+hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === character) {
-      return Object.values(arr[i])[2].length > 0;
+      return Object.values(arr[i])[2].length !== 0;
     }
   }
 };
@@ -104,6 +104,11 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character) {
+      return arr[i].children.length > 0;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +119,19 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let total = [];
+  arr.forEach(char => {
+    total.push(char.name);
+    if (char.spouse && !total.includes(char.spouse)) {
+      total.push(char.spouse);
+    }
+    char.children.forEach(child => {
+      if (!total.includes(child)) {
+        total.push(child);
+      }
+    })
+  });
+  return total.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,6 +147,13 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  arr.forEach(fam => {
+    let members = {
+      house: fam.house,
+      members: ((fam.spouse) ? 1 : 0) + Number(fam.children.length) + 1,
+    };
+    sizes.push(members);
+  });
   return sizes;
 };
 
@@ -153,6 +178,13 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  arr.forEach(fam => {
+    let members = {
+      house: fam.house,
+      members: ((!deceasedSpouses.includes(fam.spouse) && fam.spouse) ? 1 : 0) + Number(fam.children.length) + 1,
+    };
+    survivors.push(members);
+  });
   return survivors;
 };
 
