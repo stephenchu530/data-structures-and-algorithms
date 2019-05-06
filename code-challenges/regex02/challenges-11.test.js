@@ -49,7 +49,7 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => /^(\(\d{3}\)|\d{3})( |-)?\d{3}( |-)?\d{4}$/.test(phoneNumber);
+const validatePhoneNumber = (phoneNumber) => /^(\(\d{3}\)|\d{3})(( |-)?\d{3}){2}\d$/.test(phoneNumber);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
