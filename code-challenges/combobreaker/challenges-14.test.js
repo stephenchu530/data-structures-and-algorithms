@@ -97,7 +97,7 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => arr.sort((a, b) => a[property] > b[property]);
+const sortBy = (property, arr) => (property === 'name') ? arr.sort((a, b) => a.name < b.name ? -1 : 1) : arr.sort((a, b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
