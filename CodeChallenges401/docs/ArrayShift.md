@@ -1,4 +1,4 @@
-# Challenge Summary
+# Array Shift
 <!-- Short summary or background information -->
 This challenge is the warm up for course 401 code challenges and to learn how to use Gradle + IntelliJ.
 
