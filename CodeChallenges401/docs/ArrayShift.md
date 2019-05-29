@@ -14,7 +14,7 @@ Fairly simple approach.
 
 ## Solution (Code)
 <!-- Link to code -->
-[Solution Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/array_shift/CodeChallenges401/src/main/java/CodeChallenges401/ArrayShift.java)
+[Solution Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/src/main/java/CodeChallenges401/ArrayShift.java)
 
 ## Solution (Whiteboard)
 <!-- Embedded whiteboard image -->
