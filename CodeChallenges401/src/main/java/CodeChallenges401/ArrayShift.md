@@ -9,4 +9,4 @@
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![Whiteboard](/assets/ArrayShift.jpg)
+![Whiteboard](/src/main/CodeChallenges401/assets/ArrayShift.jpg)
