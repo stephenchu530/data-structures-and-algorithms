@@ -9,12 +9,12 @@ This challenge is the warm up for course 401 code challenges and to learn how to
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Fairly simple approach.
-Time: O(n)
-Space: O(n)
+* Time: O(n)
+* Space: O(n)
 
 ## Solution (Code)
 <!-- Link to code -->
-![Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/array_shift/CodeChallenges401/src/main/java/CodeChallenges401/ArrayShift.java)
+[Solution Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/array_shift/CodeChallenges401/src/main/java/CodeChallenges401/ArrayShift.java)
 
 ## Solution (Whiteboard)
 <!-- Embedded whiteboard image -->
