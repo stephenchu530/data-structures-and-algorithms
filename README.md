@@ -6,3 +6,4 @@ The purpose of this repo is to help organize and curate DS and Algo coding chall
 
 READMEs
 * [Array Shift](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/ArrayShift.md)
+* [Binary Search](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/BinarySearch.md)
