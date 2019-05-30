@@ -5,23 +5,23 @@ import static org.junit.Assert.*;
 
 public class BinarySearchTest {
     @Test public void testBinarySearchMiddle() {
-        assertEquals(2, BinarySearch.binarySearch(new int[]{1,2,3,4}, 3));
+        assertEquals(1, BinarySearch.binarySearch(new int[]{1,2,3}, 2));
     }
 
     @Test public void testBinarySearchStart() {
-        assertEquals(0, BinarySearch.binarySearch(new int[]{1,2,3,4}, 1));
+        assertEquals(0, BinarySearch.binarySearch(new int[]{1,2,3}, 1));
     }
 
     @Test public void testBinarySearchEnd() {
-        assertEquals(3, BinarySearch.binarySearch(new int[]{1,2,3,4}, 4));
+        assertEquals(2, BinarySearch.binarySearch(new int[]{1,2,3}, 3));
+    }
+
+    @Test public void testBinarySearchNotFound() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{1,2,3,6}, 4));
     }
 
     @Test public void testBinarySearchSingle() {
         assertEquals(0, BinarySearch.binarySearch(new int[]{33}, 33));
-    }
-
-    @Test public void testBinarySearchNotFound() {
-        assertEquals(-1, BinarySearch.binarySearch(new int[]{1,2,3,4}, 5));
     }
 
     @Test public void testBinarySearchSingleNotFoundLower() {
@@ -30,6 +30,26 @@ public class BinarySearchTest {
 
     @Test public void testBinarySearchSingleNotFoundUpper() {
         assertEquals(-1, BinarySearch.binarySearch(new int[]{11}, 20));
+    }
+
+    @Test public void testBinarySearchDoubleFirst() {
+        assertEquals(0, BinarySearch.binarySearch(new int[]{33,44}, 33));
+    }
+
+    @Test public void testBinarySearchDoubleSecond() {
+        assertEquals(1, BinarySearch.binarySearch(new int[]{33,44}, 44));
+    }
+
+    @Test public void testBinarySearchDoubleNotFound() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{11,15}, 13));
+    }
+
+    @Test public void testBinarySearchDoubleNotFoundLower() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{11,15}, 5));
+    }
+
+    @Test public void testBinarySearchDoubleNotFoundUpper() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{11,15}, 20));
     }
 
     @Test public void testBinarySearch100() {
