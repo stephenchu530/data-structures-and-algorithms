@@ -7,18 +7,17 @@ public class BinarySearch {
         if (arr.length == 0) { return -1; }
         if (n < arr[start] || n > arr[end]) { return -1; }
 
-        while (start != end) {
+        while (start <= end) {
             mid = (start + end) / 2;
             if (arr[mid] == n) {
                 return mid;
             }
             if (n < arr[mid]) {
-                end = mid;
+                end = mid - 1;
             } else {
                 start = mid + 1;
             }
         }
-        if (arr[start] == n) { return start; }
         return -1;
     }
 }
