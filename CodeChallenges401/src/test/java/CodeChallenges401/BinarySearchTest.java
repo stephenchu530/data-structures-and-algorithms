@@ -16,8 +16,20 @@ public class BinarySearchTest {
         assertEquals(3, BinarySearch.binarySearch(new int[]{1,2,3,4}, 4));
     }
 
+    @Test public void testBinarySearchSingle() {
+        assertEquals(0, BinarySearch.binarySearch(new int[]{33}, 33));
+    }
+
     @Test public void testBinarySearchNotFound() {
         assertEquals(-1, BinarySearch.binarySearch(new int[]{1,2,3,4}, 5));
+    }
+
+    @Test public void testBinarySearchSingleNotFoundLower() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{11}, 5));
+    }
+
+    @Test public void testBinarySearchSingleNotFoundUpper() {
+        assertEquals(-1, BinarySearch.binarySearch(new int[]{11}, 20));
     }
 
     @Test public void testBinarySearch100() {
