@@ -90,6 +90,19 @@ public class DoublyLinkedListTest {
         );
     }
 
+    @Test public void testDLLBackwardPrintMultipleItems() {
+        DoublyLinkedList testDLL = new DoublyLinkedList();
+
+        testDLL.insert(103);
+        testDLL.insert(7);
+        testDLL.insert(45);
+        testDLL.insert(5);
+        assertEquals(".print() method should return multiple items",
+                new ArrayList<Integer> (Arrays.asList(103, 7, 45, 5)),
+                testDLL.backwardPrint()
+        );
+    }
+
     @Test public void testDLLIncludesMultipleItemsTrue() {
         DoublyLinkedList testDLL = new DoublyLinkedList();
 
