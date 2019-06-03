@@ -8,3 +8,4 @@ READMEs
 * [Array Shift](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/ArrayShift.md)
 * [Binary Search](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/BinarySearch.md)
 * [Linked List](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/LinkedList.md)
+* [Doubly Linked List](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/DoublyLinkedList.md)
