@@ -15,11 +15,12 @@ public class LinkedList {
         Node newNode;
 
         try {
-            newNode = new Node(value, head);
+            newNode = new Node(value);
         } catch (Exception e) {
             // Ignore and return null
             return null;
         }
+        newNode.next = head;
         head = newNode;
         return newNode;
     }
@@ -50,13 +51,13 @@ public class LinkedList {
 
     // Linked list node class
     private class Node {
-        private int value = 0;
-        private Node next = null;
+        private int value;
+        private Node next;
 
         // Constructor
-        private Node(int value, Node next) {
+        private Node(int value) {
             this.value = value;
-            this.next = next;
+            this.next = null;
         }
     }
 }

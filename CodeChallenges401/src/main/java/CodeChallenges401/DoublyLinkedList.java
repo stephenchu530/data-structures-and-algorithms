@@ -17,7 +17,7 @@ public class DoublyLinkedList {
         Node newNode;
 
         try {
-            newNode = new Node(value, head);
+            newNode = new Node(value);
         } catch (Exception e) {
             // Ignore and return null
             return null;
@@ -28,6 +28,7 @@ public class DoublyLinkedList {
         if (head != null) {
             head.prev = newNode;
         }
+        newNode.next = head;
         head = newNode;
         return newNode;
     }
@@ -77,9 +78,9 @@ public class DoublyLinkedList {
         private Node prev;
 
         // Constructor
-        private Node(int value, Node next) {
+        private Node(int value) {
             this.value = value;
-            this.next = next;
+            this.next = null;
             this.prev = null;
         }
     }
