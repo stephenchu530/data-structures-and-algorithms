@@ -20,14 +20,12 @@ public class LinkedList {
 
     // Check if the linked list contains value
     public boolean includes(int value) {
-        boolean found = false;
-        Node walker = head;
+        Node walker = this.head;
 
-        while ((walker != null) &&
-                !(found = walker.value == value)) {
+        while (walker != null && walker.value != value) {
             walker = walker.next;
         }
-        return found;
+        return walker != null;
     }
 
     // Returns a list of all the values in the linked list
