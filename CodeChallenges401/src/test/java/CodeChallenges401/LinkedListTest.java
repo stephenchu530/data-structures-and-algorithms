@@ -1,16 +1,21 @@
 package CodeChallenges401;
 
 import org.junit.Test;
+import sun.awt.image.ImageWatched;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+    @Test public void testLLInstantiate() {
+        LinkedList testLL = new LinkedList();
+    }
+
     @Test public void testLLInsert() {
         LinkedList testLL = new LinkedList();
 
-        assertNotNull("Should not return null",
-                testLL.insert(4));
+        testLL.insert(4);
     }
 
     @Test public void testLLPrintEmptyList() {
