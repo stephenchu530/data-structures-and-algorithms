@@ -288,7 +288,7 @@ public class LinkedListTest {
         );
     }
 
-    @Test public void testLLMixInsertAppendInsertAfterInsertBefore() {
+    @Test public void testLLMixInsertAppendInsertAfterInsertBefore1() {
         LinkedList testLL = new LinkedList();
 
         testLL.append(45);
@@ -301,6 +301,25 @@ public class LinkedListTest {
 
         assertEquals("Should be [67, 34, -73, 22, 45, 87, 77]",
                 "[67, 34, -73, 22, 45, 87, 77]",
+                testLL.toString()
+        );
+    }
+
+    @Test public void testLLMixInsertAppendInsertAfterInsertBefore2() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(66);
+        testLL.append(99);
+        testLL.insertBefore(66,33);
+        testLL.insertBefore(33,46);
+        testLL.insert(21);
+        testLL.insert(14);
+        testLL.insertAfter(99, 777);
+        testLL.insertAfter(777, 59);
+        testLL.append(90);
+
+        assertEquals("Should be [14, 21, 46, 33, 66, 99, 777, 59, 90]",
+                "[14, 21, 46, 33, 66, 99, 777, 59, 90]",
                 testLL.toString()
         );
     }
