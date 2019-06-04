@@ -12,7 +12,7 @@ public class LinkedList {
         this.tail = null;
     }
 
-    // Insert new node
+    // Insert new node at the front of the linked list
     public void insert(int value) {
         Node newNode = new Node(value);
 
@@ -31,16 +31,26 @@ public class LinkedList {
         return walker != null;
     }
 
-    // Returns a list of all the values in the linked list
-    public ArrayList<Integer> print() {
-        Node walker = head;
-        ArrayList<Integer> output = new ArrayList<>();
+    // Override toString method to return the string representation of the linked list
+    @Override public String toString() {
+        Node walker = this.head;
+        StringBuilder output = new StringBuilder("[");
 
-        while (walker != null) {
-            output.add(walker.value);
+        while (walker != null && walker.next != null) {
+            output.append(walker.value);
+            output.append(", ");
             walker = walker.next;
         }
-        return output;
+        if (walker != null) {
+            output.append(walker.value);
+        }
+        output.append("]");
+        return output.toString();
+    }
+
+    // Displays to screen the string representation of the linked list
+    public void print() {
+        System.out.println(this.toString());
     }
 
     // Linked list node class
