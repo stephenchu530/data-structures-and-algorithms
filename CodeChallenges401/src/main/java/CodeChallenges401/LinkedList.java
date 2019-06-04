@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class LinkedList {
     private Node head;
+    private Node tail;
 
     // Instantiate new empty linked list
     public void LinkdedList() {
         this.head = null;
+        this.tail = null;
     }
 
     // Insert new node
@@ -15,6 +17,8 @@ public class LinkedList {
         Node newNode = new Node(value);
 
         newNode.next = this.head;
+        if (this.head == null)
+            this.tail = newNode;
         this.head = newNode;
     }
 
@@ -22,9 +26,8 @@ public class LinkedList {
     public boolean includes(int value) {
         Node walker = this.head;
 
-        while (walker != null && walker.value != value) {
+        while (walker != null && walker.value != value)
             walker = walker.next;
-        }
         return walker != null;
     }
 
