@@ -1,6 +1,6 @@
 # Linked List
 <!-- Short summary or background information -->
-This is a solo project to showcase the linked list data structure in Java 8.
+Parts of this project was solo and some parts was done as a group. It is to showcase the linked list data structure in Java 8.
 
 ## Challenge Description
 <!-- Description of the challenge -->
