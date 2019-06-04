@@ -7,22 +7,15 @@ public class LinkedList {
 
     // Instantiate new empty linked list
     public void LinkdedList() {
-        head = null;
+        this.head = null;
     }
 
     // Insert new node
-    public Node insert(int value) {
-        Node newNode;
+    public void insert(int value) {
+        Node newNode = new Node(value);
 
-        try {
-            newNode = new Node(value);
-        } catch (Exception e) {
-            // Ignore and return null
-            return null;
-        }
-        newNode.next = head;
-        head = newNode;
-        return newNode;
+        newNode.next = this.head;
+        this.head = newNode;
     }
 
     // Check if the linked list contains value
