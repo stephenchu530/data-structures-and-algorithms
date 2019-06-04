@@ -85,9 +85,6 @@ public class LinkedListTest {
                 displayOutput.toString());
     }
 
-
-
-
     @Test public void testLLInsertMultipleValues() {
         LinkedList testLL = new LinkedList();
 
@@ -168,4 +165,126 @@ public class LinkedListTest {
                 displayOutput.toString()
         );
     }
+
+    @Test public void testLLAppendSingleItem() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(64);
+    }
+
+    @Test public void testLLAppendMultipleItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(75);
+        testLL.append(3);
+        testLL.append(-395);
+        testLL.append(67);
+    }
+
+    @Test public void testLLToStringAppendMultipleItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(45);
+        testLL.append(-9834);
+        testLL.append(356);
+        testLL.append(45);
+        assertEquals("Should be [45, -9834, 356, 45]",
+                "[45, -9834, 356, 45]",
+                testLL.toString()
+        );
+    }
+
+    @Test public void testLLToStringMixAppendInsertMultipleItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(-45);
+        testLL.insert(34);
+        testLL.append(734);
+        testLL.append(23);
+        testLL.insert(5);
+        assertEquals("Should be [5, 34, -45, 734, 23]",
+                "[5, 34, -45, 734, 23]",
+                testLL.toString()
+        );
+    }
+
+    @Test public void testLLInsertBeforeSingleItemLL() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(86);
+        testLL.insertBefore(86, 5);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLLInsertBeforeEmptyLLError() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insertBefore(86, 5);
+    }
+
+    @Test public void testLLInsertBeforeMultipleItemLL() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(23);
+        testLL.insert(56);
+        testLL.insert(44);
+
+        testLL.insertBefore(23, 22);
+        testLL.insertBefore(56, 55);
+        testLL.insertBefore(44, 43);
+
+        assertEquals("Should be [43, 44, 55, 56, 22, 23]",
+                "[43, 44, 55, 56, 22, 23]",
+                testLL.toString()
+        );
+    }
+
+    @Test public void testLLInsertAfterSingleItemLL() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(56);
+        testLL.insertAfter(56, 89);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLLInsertAfterEmptyLLError() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insertAfter(56, 89);
+    }
+
+    @Test public void testLLInsertAfterMultipleItemLL() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(23);
+        testLL.insert(56);
+        testLL.insert(44);
+
+        testLL.insertAfter(23, 24);
+        testLL.insertAfter(56, 57);
+        testLL.insertAfter(44, 45);
+
+        assertEquals("Should be [44, 45, 56, 57, 23, 24]",
+                "[44, 45, 56, 57, 23, 24]",
+                testLL.toString()
+        );
+    }
+
+    @Test public void testLLMixInsertAppendInsertAfterInsertBefore() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(45);
+        testLL.insertBefore(45, 34);
+        testLL.insert(67);
+        testLL.insertAfter(34, 22);
+        testLL.append(87);
+        testLL.insertAfter(87, 77);
+        testLL.insertBefore(22, -73);
+
+        assertEquals("Should be [67, 34, -73, 22, 45, 87, 77]",
+                "[67, 34, -73, 22, 45, 87, 77]",
+                testLL.toString()
+        );
+    }
+
 }
