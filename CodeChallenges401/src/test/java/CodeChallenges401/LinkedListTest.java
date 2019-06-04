@@ -270,6 +270,24 @@ public class LinkedListTest {
         );
     }
 
+    @Test public void testLLMultipleInsertBefore() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(45);
+        testLL.append(45);
+        testLL.insertBefore(45, 34);
+        testLL.insertBefore(45, 34);
+        testLL.insertBefore(45, 34);
+        testLL.insertAfter(34, 10);
+        testLL.insertAfter(34, 10);
+        testLL.insertAfter(34, 10);
+
+        assertEquals("Should be [34, 10, 10, 10, 34, 34, 45, 45]",
+                "[34, 10, 10, 10, 34, 34, 45, 45]",
+                testLL.toString()
+        );
+    }
+
     @Test public void testLLMixInsertAppendInsertAfterInsertBefore() {
         LinkedList testLL = new LinkedList();
 
@@ -286,5 +304,4 @@ public class LinkedListTest {
                 testLL.toString()
         );
     }
-
 }
