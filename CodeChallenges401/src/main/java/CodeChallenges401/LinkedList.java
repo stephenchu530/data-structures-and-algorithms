@@ -1,15 +1,15 @@
 package CodeChallenges401;
 
-import java.util.ArrayList;
-
 public class LinkedList {
     private Node head;
     private Node tail;
+    private int size;
 
     // Instantiate new empty linked list
     public void LinkdedList() {
         this.head = null;
         this.tail = null;
+        this.size = 0;
     }
 
     // Insert new node at the front of the linked list
@@ -20,6 +20,7 @@ public class LinkedList {
         if (this.head == null)
             this.tail = newNode;
         this.head = newNode;
+        this.size++;
     }
 
     // Add a new node to the end of the linked list
@@ -32,6 +33,7 @@ public class LinkedList {
             this.tail.next = newNode;
         }
         this.tail = newNode;
+        this.size++;
     }
 
     // Check if the linked list contains value
@@ -60,6 +62,7 @@ public class LinkedList {
             newNode.next = walker.next;
             walker.next = newNode;
         }
+        this.size++;
     }
 
     // Add a new node after a given target
@@ -78,6 +81,28 @@ public class LinkedList {
             newNode.next = walker.next;
             walker.next = newNode;
         }
+        this.size++;
+    }
+
+    // Return node value at kth position from end of linked list
+    public int kthFromEnd(int kth) {
+        if (this.size == 0 || kth < 0 || kth >= this.size) {
+            throw new IllegalAccessError("Node does not exist!");
+        }
+        Node walker = this.head;
+        for (int i = 0; i < this.size - kth - 1; i++) {
+            walker = walker.next;
+        }
+        return walker.value;
+    }
+
+    // Return the node value of the middle node in the linked list
+    public int findMiddle() {
+        if (this.size == 0) {
+            throw new IllegalStateException("Empty linked list!");
+        }
+
+        return this.kthFromEnd(this.size/2);
     }
 
     // Override toString method to return the string representation of the linked list

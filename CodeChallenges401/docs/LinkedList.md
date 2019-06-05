@@ -15,6 +15,8 @@ The following are the specs for this project:
   * A method `append` that takes in an argument and adds a new `Node` to the end.
   * A method `insertBefore` that inserts a new node *before* a node with a given value.
   * A method `insertAfter` that inserts a new node *after* a node with a given value.
+  * A method `kthFromEnd` that retrieves the node value at kth position from the end of the linked list.
+  * A method `findMiddle` that returns the node value of the middle node in the linked list.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -25,6 +27,8 @@ The following are the specs for this project:
 * `append` - O(1)
 * `insertBefore` - O(n)
 * `insertAfter` - O(n)
+* `kthFromEnd` - O(n)
+* `findMiddle` - O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -40,7 +44,11 @@ The following are the specs for this project:
 
 * `void LinkedList.insertBefore(int target, int value)` - Takes and an integer value and inserts a new `Node` before the node containing the integer target.
 
-* `void LinkedList.insertAfter(int target, int value)` - Takes and an integer value and inserts a new `Node` after the node containing the integer target.
+* `void LinkedList.insertAfter(int target, int value)` - Takes an integer value and inserts a new `Node` after the node containing the integer target.
+
+* `int LinkedList.kthFromEnd(int position)` - Takes in an integer position and returns the node value at that position from the *end* of the linked list.
+
+* `int LinkedList.findMiddle()` - Takes no arguments and returns the value of the middle node.
 
 ## Solution (Code)
 <!-- Link to code -->
@@ -48,4 +56,8 @@ The following are the specs for this project:
 
 ## Solution (Whiteboard)
 <!-- Embedded whiteboard image -->
+Insertion Task
 ![Whiteboard](assets/LinkedList.jpg)
+
+kth From End Task
+![Whiteboard](assets/kthFromEnd.jpg)
