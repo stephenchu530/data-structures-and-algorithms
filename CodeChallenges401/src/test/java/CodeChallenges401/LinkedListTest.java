@@ -23,7 +23,7 @@ public class LinkedListTest {
         LinkedList testLL = new LinkedList();
 
         assertEquals("Linked List should be empty",
-                new String("[]"),
+                "[]",
                 testLL.toString()
         );
     }
@@ -143,7 +143,7 @@ public class LinkedListTest {
         testLL.insert(1001);
         testLL.insert(455);
         assertEquals("Should return [455, 1001, 17, 0, -33]",
-                new String("[455, 1001, 17, 0, -33]"),
+                "[455, 1001, 17, 0, -33]",
                 testLL.toString()
         );
     }
@@ -321,6 +321,153 @@ public class LinkedListTest {
         assertEquals("Should be [14, 21, 46, 33, 66, 99, 777, 59, 90]",
                 "[14, 21, 46, 33, 66, 99, 777, 59, 90]",
                 testLL.toString()
+        );
+    }
+
+    @Test(expected = IllegalAccessError.class)
+    public void testLLKthFromEndEmptyList() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.kthFromEnd(4);
+    }
+
+    @Test(expected = IllegalAccessError.class)
+    public void testLLKthFromEndTooBigK() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(4);
+        testLL.kthFromEnd(999);
+    }
+
+    @Test(expected = IllegalAccessError.class)
+    public void testLLKthFromEndTooSmallK() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(4);
+        testLL.kthFromEnd(-890);
+    }
+
+    @Test(expected = IllegalAccessError.class)
+    public void testLLKthFromEndMixedErrorTests() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(1);
+        testLL.append(2);
+        testLL.insertAfter(1, 3);
+        testLL.insertBefore(2, 4);
+
+        testLL.kthFromEnd(4);
+    }
+
+    @Test public void testLLKthFromEndSingleItemLL() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(5);
+        assertEquals("Should return 5",
+                5,
+                testLL.kthFromEnd(0)
+        );
+    }
+
+    @Test public void testLLKthFromEndTwoItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(8);
+        testLL.append(34);
+        assertEquals("Should return 34",
+                34,
+                testLL.kthFromEnd(0)
+        );
+        assertEquals("Should return 8",
+                8,
+                testLL.kthFromEnd(1)
+        );
+    }
+
+    @Test public void testLLKthFromEndManyItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(8);
+        testLL.append(34);
+        testLL.insert(76);
+        testLL.insertAfter(8, 66);
+        testLL.insertBefore(34, 100);
+        assertEquals("Should return 34",
+                34,
+                testLL.kthFromEnd(0)
+        );
+        assertEquals("Should return 100",
+                100,
+                testLL.kthFromEnd(1)
+        );
+        assertEquals("Should return 66",
+                66,
+                testLL.kthFromEnd(2)
+        );
+        assertEquals("Should return 8",
+                8,
+                testLL.kthFromEnd(3)
+        );
+        assertEquals("Should return 8",
+                76,
+                testLL.kthFromEnd(4)
+        );
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testLLFindMiddleEmptyList() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.findMiddle();
+    }
+
+    @Test public void testLLFindMiddleSingleItem() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(6);
+        assertEquals("Should be 6",
+                6,
+                testLL.findMiddle()
+        );
+    }
+
+    @Test public void testLLFindMiddleTwoItems() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.insert(6);
+        testLL.append(7);
+        assertEquals("Should be 7",
+                6,
+                testLL.findMiddle()
+        );
+    }
+
+    @Test public void testLLFindMiddleMultiItemsOdd() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(7);
+        testLL.append(8);
+        testLL.append(9);
+        testLL.append(10);
+        testLL.append(11);
+        assertEquals("Should be 9",
+                9,
+                testLL.findMiddle()
+        );
+    }
+
+    @Test public void testLLFindMiddleMultiItemsEven() {
+        LinkedList testLL = new LinkedList();
+
+        testLL.append(13);
+        testLL.append(14);
+        testLL.append(15);
+        testLL.append(16);
+        testLL.append(17);
+        testLL.append(18);
+        assertEquals("Should be 15",
+                15,
+                testLL.findMiddle()
         );
     }
 }
