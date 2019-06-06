@@ -1,9 +1,19 @@
 package CodeChallenges401;
 
+import sun.awt.image.ImageWatched;
+
 public class LinkedList {
     private Node head;
     private Node tail;
     private int size;
+
+    public Node getHead() {
+        return this.head;
+    }
+
+    public Node getTail() {
+        return this.tail;
+    }
 
     // Instantiate new empty linked list
     public void LinkdedList() {
@@ -103,6 +113,28 @@ public class LinkedList {
         }
 
         return this.kthFromEnd(this.size/2);
+    }
+
+    // Zips two linked lists into one
+    public static LinkedList mergeLists(LinkedList list1, LinkedList list2) {
+        Node walker1 = list1.getHead(), walker2 = list2.getHead();
+        Node tmp1, tmp2;
+
+        if (walker1 == null) return list2;
+        if (walker2 == null) return list1;
+
+        while (true) {
+            tmp1 = walker1.next;
+            tmp2 = walker2.next;
+            walker1.next = walker2;
+            walker1 = tmp1;
+            if (walker1 == null) break;
+            walker2.next = walker1;
+            walker2 = tmp2;
+            if (walker2 == null) break;
+        }
+
+        return list1;
     }
 
     // Override toString method to return the string representation of the linked list

@@ -17,6 +17,7 @@ The following are the specs for this project:
   * A method `insertAfter` that inserts a new node *after* a node with a given value.
   * A method `kthFromEnd` that retrieves the node value at kth position from the end of the linked list.
   * A method `findMiddle` that returns the node value of the middle node in the linked list.
+  * A method `mergeLists` that zips two linked lists and returns the pointer to the new linked list.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -29,6 +30,8 @@ The following are the specs for this project:
 * `insertAfter` - O(n)
 * `kthFromEnd` - O(n)
 * `findMiddle` - O(n)
+* `mergeLists` - O(n)
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -50,6 +53,8 @@ The following are the specs for this project:
 
 * `int LinkedList.findMiddle()` - Takes no arguments and returns the value of the middle node.
 
+* `LinkedList LinkedList.mergeLists(LinkedList list1, LinkedList list2)` - Takes two linked list arguments, zips them together, and returns a reference to the new linked list.
+
 ## Solution (Code)
 <!-- Link to code -->
 [Solution Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/src/main/java/CodeChallenges401/LinkedList.java)
@@ -61,3 +66,6 @@ Insertion Task
 
 kth From End Task
 ![Whiteboard](assets/kthFromEnd.jpg)
+
+Merge Lists Taks
+![Whiteboard](assets/MergeLists.jpg)

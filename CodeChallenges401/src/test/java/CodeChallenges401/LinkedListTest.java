@@ -1,6 +1,8 @@
 package CodeChallenges401;
 
 import org.junit.Test;
+import sun.awt.image.ImageWatched;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -468,6 +470,85 @@ public class LinkedListTest {
         assertEquals("Should be 15",
                 15,
                 testLL.findMiddle()
+        );
+    }
+
+    @Test public void testLLMergeEmptyLists() {
+        LinkedList list1 = new LinkedList(), list2 = new LinkedList();
+
+        assertEquals("Should be an empty list",
+                "[]",
+                LinkedList.mergeLists(list1, list2).toString()
+        );
+    }
+
+    @Test public void testLLMergeSingleEmptyList() {
+        LinkedList list = new LinkedList(), emptyList = new LinkedList();
+
+        list.append(2);
+        list.append(4);
+        list.append(6);
+        list.append(8);
+
+        assertEquals("Should be an empty list",
+                "[2, 4, 6, 8]",
+                LinkedList.mergeLists(list, emptyList).toString()
+        );
+
+        // switch sides
+        assertEquals("Should be an empty list",
+                "[2, 4, 6, 8]",
+                LinkedList.mergeLists(emptyList, list).toString()
+        );
+    }
+
+    @Test public void testLLMergeSameLengthLists() {
+        LinkedList list1 = new LinkedList(), list2 = new LinkedList();
+
+        list1.append(2);
+        list1.append(4);
+        list1.append(6);
+        list1.append(8);
+        list2.append(11);
+        list2.append(22);
+        list2.append(33);
+        list2.append(44);
+
+        assertEquals("Should be an empty list",
+                "[2, 11, 4, 22, 6, 33, 8, 44]",
+                LinkedList.mergeLists(list1, list2).toString()
+        );
+    }
+
+    @Test public void testLLMergeUnevenLengthsLists1() {
+        LinkedList list1 = new LinkedList(), list2 = new LinkedList();
+
+        list1.append(2);
+        list1.append(4);
+        list2.append(11);
+        list2.append(22);
+        list2.append(33);
+        list2.append(44);
+
+        assertEquals("Should be an empty list",
+                "[2, 11, 4, 22, 33, 44]",
+                LinkedList.mergeLists(list1, list2).toString()
+        );
+    }
+
+    @Test public void testLLMergeUnevenLengthsLists2() {
+        LinkedList list1 = new LinkedList(), list2 = new LinkedList();
+
+        list1.append(2);
+        list1.append(4);
+        list2.append(11);
+        list2.append(22);
+        list2.append(33);
+        list2.append(44);
+
+        assertEquals("Should be an empty list",
+                "[11, 2, 22, 4, 33, 44]",
+                LinkedList.mergeLists(list2, list1).toString()
         );
     }
 }
