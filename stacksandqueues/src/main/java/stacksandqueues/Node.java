@@ -26,7 +26,7 @@ public class Node {
     }
 
     public Node(int value, Node next) {
-        this.setValue(value);
+        this(value);
         this.setNext(next);
     }
 
