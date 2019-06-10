@@ -42,5 +42,7 @@ The following are the specs for this project:
 ## Solution (Code)
 <!-- Link to code -->
 [Stack Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Stack.java)
+
 [Queue Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Queue.java)
+
 [Node Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Node.java)
