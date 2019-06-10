@@ -21,7 +21,7 @@ The following are the specs for this project:
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 * `push` - O(1)
 * `pop` - O(1)
-* `enqueue` - O(1)
+* `enqueue` - O(1) due to using a tail pointer
 * `dequeue` - O(1)
 * `peak` (for both stack and queue) - O(1)
 
@@ -41,6 +41,6 @@ The following are the specs for this project:
 
 ## Solution (Code)
 <!-- Link to code -->
-[Stack Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/CodeChallenges401/Stack.java)
-[Queue Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/CodeChallenges401/Queue.java)
-[Node Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/CodeChallenges401/Node.java)
+[Stack Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Stack.java)
+[Queue Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Queue.java)
+[Node Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/src/main/java/stacksandqueues/Node.java)
