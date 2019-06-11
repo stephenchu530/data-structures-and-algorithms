@@ -1,5 +1,6 @@
 package QueueWithStacks;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +13,12 @@ public class PseudoQueueTest {
     public void setUpPseudoQueue() {
         this.testPQ = new PseudoQueue();
     }
+
+    @After
+    public void tearDownPseudoQueue() {
+        this.testPQ = null;
+    }
+
     @Test
     public void testInstantiate() {
         PseudoQueue testPQ;
@@ -31,6 +38,11 @@ public class PseudoQueueTest {
         );
     }
 
+    @Test(expected = IllegalAccessError.class)
+    public void testDequeueFail() {
+        this.testPQ.dequeue();
+    }
+
     @Test
     public void testMultiEnqueue() {
         this.testPQ.enqueue(3);
@@ -40,27 +52,51 @@ public class PseudoQueueTest {
 
     @Test
     public void testMultiDequeue() {
-        PseudoQueue testPQ = new PseudoQueue();
-        testPQ.enqueue(5);
-        testPQ.enqueue(6);
-        testPQ.enqueue(7);
+        this.testPQ = new PseudoQueue();
+        this.testPQ.enqueue(5);
+        this.testPQ.enqueue(6);
+        this.testPQ.enqueue(7);
 
         assertEquals("Should return the correct value",
                 5,
-                testPQ.dequeue()
+                this.testPQ.dequeue()
         );
         assertEquals("Should return the correct value",
                 6,
-                testPQ.dequeue()
+                this.testPQ.dequeue()
         );
-        testPQ.enqueue(8);
+        this.testPQ.enqueue(8);
         assertEquals("Should return the correct value",
                 7,
-                testPQ.dequeue()
+                this.testPQ.dequeue()
         );
         assertEquals("Should return the correct value",
                 8,
-                testPQ.dequeue()
+                this.testPQ.dequeue()
+        );
+    }
+
+    @Test
+    public void testMultiEnqueueAndDequeue() {
+        this.testPQ.enqueue(55);
+        assertEquals("Should return the correct value",
+                55,
+                this.testPQ.dequeue()
+        );
+        this.testPQ.enqueue(66);
+        assertEquals("Should return the correct value",
+                66,
+                this.testPQ.dequeue()
+        );
+        this.testPQ.enqueue(77);
+        this.testPQ.enqueue(88);
+        assertEquals("Should return the correct value",
+                77,
+                this.testPQ.dequeue()
+        );
+        assertEquals("Should return the correct value",
+                88,
+                this.testPQ.dequeue()
         );
     }
 }
