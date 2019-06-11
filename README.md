@@ -10,4 +10,4 @@ READMEs
 * [Linked List](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/LinkedList.md)
 * [Doubly Linked List](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/CodeChallenges401/docs/DoublyLinkedList.md)
 * [Stacks and Queues](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/stacksandqueues/docs/StacksandQueues.md)
-* [Queue With Stacks](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/queue_with_stacks/docs/QueueWithStacks.md)
+* [Queue With Stacks](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/QueueWithStacks/docs/QueueWithStacks.md)
