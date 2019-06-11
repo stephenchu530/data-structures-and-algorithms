@@ -38,3 +38,7 @@ The following are the specs for this project:
 ## Solution (Code)
 <!-- Link to code -->
 [Stack Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/QueuesWithStacks/src/main/java/QueueWithStacks/QueueWithStacks.java)
+
+## Solution (Whiteboard)
+<!-- Embedded whiteboard image -->
+![Whiteboard](assets/QueueWithStacks.jpg)
