@@ -8,10 +8,6 @@ public class Node {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public Node getNext() {
         return next;
     }
@@ -21,12 +17,7 @@ public class Node {
     }
 
     public Node(int value) {
-        this.setValue(value);
+        this.value = value;
         this.setNext(null);
-    }
-
-    public Node(int value, Node next) {
-        this(value);
-        this.setNext(next);
     }
 }
