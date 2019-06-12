@@ -1,6 +1,6 @@
 package fifoAnimalShelter;
 
-// Generic node type
+// Generic node class
 public class Node<T> {
     private T value;
     private Node<T> next;
