@@ -4,61 +4,59 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class QueueTest {
-    public Queue<String> testQueue;
+public class AnimalQueueTest {
+    public AnimalQueue testAnimalQueue;
 
     @Before
     public void setUpQueue() {
-        this.testQueue = new Queue<>();
+        this.testAnimalQueue = new AnimalQueue();
     }
 
     @Test
     public void testInstantiate() {
-        Queue<Integer> testQueue1 = new Queue<>();
-        Queue<String> testQueue2 = new Queue<>();
-        Queue<Object> testQueue3 = new Queue<>();
+        AnimalQueue testAnimalQueue1 = new AnimalQueue();
     }
 
     @Test
     public void testEnqueue() {
-        this.testQueue.enqueue("Hello, World!");
+        this.testAnimalQueue.enqueue("Hello, World!");
     }
 
     @Test
     public void testDequeue() {
-        this.testQueue.enqueue("Hello, World!");
+        this.testAnimalQueue.enqueue("Hello, World!");
         assertEquals("Should the proper string",
                 "Hello, World!",
-                this.testQueue.dequeue()
+                this.testAnimalQueue.dequeue()
         );
     }
 
     @Test(expected = IllegalStateException.class)
     public void testDequeueFail() {
-        this.testQueue.dequeue();
+        this.testAnimalQueue.dequeue();
     }
 
     @Test
     public void testMixedEnqueueDequeue() {
-        this.testQueue.enqueue("AAA");
+        this.testAnimalQueue.enqueue("AAA");
         assertEquals("Should the proper string",
                 "AAA",
-                this.testQueue.dequeue()
+                this.testAnimalQueue.dequeue()
         );
-        this.testQueue.enqueue("BBB");
-        this.testQueue.enqueue("CCC");
+        this.testAnimalQueue.enqueue("BBB");
+        this.testAnimalQueue.enqueue("CCC");
         assertEquals("Should the proper string",
                 "BBB",
-                this.testQueue.dequeue()
+                this.testAnimalQueue.dequeue()
         );
-        this.testQueue.enqueue("DDD");
+        this.testAnimalQueue.enqueue("DDD");
         assertEquals("Should the proper string",
                 "CCC",
-                this.testQueue.dequeue()
+                this.testAnimalQueue.dequeue()
         );
         assertEquals("Should the proper string",
                 "DDD",
-                this.testQueue.dequeue()
+                this.testAnimalQueue.dequeue()
         );
     }
 }
