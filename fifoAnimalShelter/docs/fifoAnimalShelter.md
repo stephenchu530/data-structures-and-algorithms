@@ -22,7 +22,7 @@ The following are the specs for this project:
 <!-- Description of each method publicly available to your Linked List -->
 * `void Queue.enqueue(String animal)` - Takes in a String type denoting `cat` or `dog` and adds that `node` type to the appropriate queue.
 
-* `T Queue.dequeue(String animal)` - Takes in a String type denoting `cat`, `dog`, or `null` and removes that `animal` from front of the respective queue. If `null` was passed in, the null `will` be returned (for now).
+* `T Queue.dequeue(String pref)` - Takes in a String `pref` denoting `cat`, `dog`, or `null` and removes that `animal` from front of the respective queue. If `null` was passed in, then a `null` will be returned (for now).
 
 ## Solution (Code)
 <!-- Link to code -->
