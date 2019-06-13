@@ -25,6 +25,13 @@ public class StackTest {
         Stack<Character> testStack3 = new Stack<>();
     }
 
+    @Test
+    public void testIsEmpty() {
+        assertTrue("Should be empty",
+                this.testStack.isEmpty()
+        );
+    }
+
     @Test(expected = IllegalStateException.class)
     public void testPeekEmpty() {
         this.testStack.peek();

@@ -3,35 +3,31 @@ package MultiBracketValidation;
 public class Stack<T> {
     private Node<T> top;
 
-    public Node<T> getTop() {
-        return top;
-    }
-
-    public void setTop(Node<T> node) {
-        this.top = node;
-    }
-
     public Stack() {
         this.top = null;
     }
 
+    public boolean isEmpty() {
+        return this.top == null;
+    }
+
     public T peek() {
-        if (this.getTop() == null)
+        if (this.top == null)
             throw new IllegalStateException("Nothing to peek!");
-        return this.getTop().getValue();
+        return this.top.getValue();
     }
 
     public void push(T value) {
         Node<T> newNode = new Node<>(value);
-        newNode.setNext(this.getTop());
-        this.setTop(newNode);
+        newNode.setNext(this.top);
+        this.top = newNode;
     }
 
     public T pop() {
-        if (this.getTop() == null)
+        if (this.top == null)
             throw new IllegalStateException("Nothing to pop!");
-        T tmp = this.getTop().getValue();
-        this.setTop(this.getTop().getNext());
+        T tmp = this.top.getValue();
+        this.top = this.top.getNext();
         return tmp;
     }
 }
