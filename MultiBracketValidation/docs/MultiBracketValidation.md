@@ -1,37 +1,45 @@
-# FIFO Animal Shelter
+# Multi Bracket Validation
 <!-- Short summary or background information -->
 This is a solo code challenge project that builds upon the lessons learned from linked lists, queues, and stacks.
 
 ## Challenge Description
 <!-- Description of the challenge -->
-The following are the specs for this project:
-* Create a `Node` class with a property to the stored value and to the next `Node`.
-  * This `Node` class will be an `animal` that could be either a `cat` or `dog`.
-* Create an `Animal` class that extends the `Node` class
-  * This class would have an additional `date/time` instance variable
-* Create a `Queue` class with the following:
-  * One `Queue` will be a `cat` queue.
-  * Another `Queue` will be a `dog` queue.
-  * A method `enqueue` that takes in an argument that specifies either `cat` or `dog` and adds a new `Node` of that `animal` type to the back of the appropriate queue.
-  * A method `dequeue` that takes in an argument that specifies `cat`, `dog`, or `no pref` (in whatever manner) and returns the `cat` or `dog` object from the respective queue. If `no pref` was passed in, then the program returns a `null` (for now).
-* Create an `AnimalShelter` class that extends the `Queue` class
-  * Add a `getDate/Time` like method that retrieves a `Animal`'s create date/time info.
+Create an app that takes in a string argument that contains brackets `[]`, `{}`, and `()`, and returns a boolean whether or not the brackets in the string are balanced.
+
+## Installation
+<!-- How to install -->
+```
+ $ git clone git@github.com:stephenchu530/data-structures-and-algorithms.git
+ $ cd data-structures-and-algorithms
+ $ cd MultiBracketValidation
+ $ ./gradlew build
+ $ ./gradelw test
+```
+If all is well, neither the last two commands should fail. If it does, troubleshoot on your own.
+
+## Usage
+<!-- How to use -->
+```
+ $ ./gradlew run --args '<input string containing brackets>'
+```
+For example:
+```
+ $ ./gradlew run --args '{{[][](())}}'
+   true
+   
+ $ ./gradlew run --args '{{[(][)]}}'
+   false
+```
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-* `enqueue` - O(1)
-* `dequeue` - O(1)
-
-## API
-<!-- Description of each method publicly available to your Linked List -->
-* `void Queue.enqueue(String animal)` - Takes in a String type denoting `cat` or `dog` and adds that `node` type to the appropriate queue.
-
-* `T Queue.dequeue(String pref)` - Takes in a String `pref` denoting `cat`, `dog`, or `null` and removes that `animal` from front of the respective queue. If `null` was passed in, then a `null` will be returned (for now).
+* Time complexity - `O(n)`
+* Space complexity - `O(n)`
 
 ## Solution (Code)
 <!-- Link to code -->
-[Fifo Animal Shelter Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/fifoAnimalShelter/src/main/java/fifoAnimalShelter/AnimalShelter.java)
+[Multi Bracket Validation Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/MultiBracketValidation/src/main/java/MultiBracketValidation/App.java)
 
 ## Solution (Whiteboard)
 <!-- Embedded whiteboard image -->
-![Whiteboard](assets/fifoAnimalShelter.jpg)
+![Whiteboard](assets/MultiBracketValidation.jpg)
