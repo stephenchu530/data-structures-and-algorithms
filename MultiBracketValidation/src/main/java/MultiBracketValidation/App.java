@@ -3,6 +3,8 @@
  */
 package MultiBracketValidation;
 
+import java.util.HashMap;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -10,6 +12,27 @@ public class App {
 
     public static void main(String[] args) {
         if (args.length > 0)
-            System.out.println(args[0]);
+            System.out.println(validateBrackets(args[0]));
+        else
+            System.out.println("Nothing to do!");
+    }
+
+    public static boolean validateBrackets(String input) {
+        Stack<Character> stack = new Stack<>();
+
+        HashMap<Character, Character> hMap = new HashMap<>();
+        hMap.put('{', '}');
+        hMap.put('[', ']');
+        hMap.put('(', ')');
+
+        for (Character c: input.toCharArray()) {
+            if (c.equals('[') || c.equals('{') || c.equals('('))
+                stack.push(c);
+            if (c.equals(']') || c.equals('}') || c.equals(')'))
+                if (stack.isEmpty() || !hMap.get(stack.pop()).equals(c))
+                    return false;
+        }
+
+        return stack.isEmpty();
     }
 }

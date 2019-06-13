@@ -7,8 +7,65 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    @Test
+    public void testAppNoArgs() {
+        assertTrue("No args is should return true",
+                App.validateBrackets("")
+        );
+    }
+
+    @Test
+    public void testAppSingleCharNonBracket() {
+        assertTrue("Single non-bracket char should return true",
+                App.validateBrackets("R")
+        );
+    }
+
+    @Test
+    public void testAppSingleBracketAny() {
+        assertFalse("Single any bracket char should return false",
+                App.validateBrackets("{")
+        );
+        assertFalse("Single any bracket char should return false",
+                App.validateBrackets("]")
+        );
+        assertFalse("Single any bracket char should return false",
+                App.validateBrackets("(")
+        );
+    }
+
+    @Test
+    public void testAppValidateBracketsTrue() {
+        assertTrue("These should pass!",
+                App.validateBrackets("{}")
+        );
+        assertTrue("These should pass!",
+                App.validateBrackets("[]{}()")
+        );
+        assertTrue("These should pass!",
+                App.validateBrackets("[](Wut i()s this)?{}")
+        );
+        assertTrue("These should pass!",
+                App.validateBrackets("(){}[[]]")
+        );
+        assertTrue("These should pass!",
+                App.validateBrackets("{}{Code}[Fel lows](())")
+        );
+    }
+
+    @Test
+    public void testAppValidateBracketsFalse() {
+        assertFalse("These should fail!",
+                App.validateBrackets("{[({}]")
+        );
+        assertFalse("These should fail!",
+                App.validateBrackets("(](")
+        );
+        assertFalse("These should fail!",
+                App.validateBrackets("{(})")
+        );
+        assertFalse("These should fail!",
+                App.validateBrackets("[)")
+        );
     }
 }
