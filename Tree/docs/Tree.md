@@ -40,5 +40,8 @@ The following are the specs for this project:
 * `Boolean BinarySearchTree.contains(T value)` - accepts a `value` and returns a `boolean` whether or not the tree contains that `value`
 ## Solution (Code)
 <!-- Link to code -->
-[Tree Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/src/main/java/Tree/Tree.java)
+[Tree Node Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/src/main/java/Tree/TreeNode.java)
 
+[Binary Tree Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/src/main/java/Tree/BinaryTree.java)
+
+[Binary Search Tree Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/src/main/java/Tree/BinarySearchTree.java)
