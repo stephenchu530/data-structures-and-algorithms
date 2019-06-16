@@ -2,32 +2,37 @@ package Tree;
 
 public class TreeNode<T> {
     private T value;
-    private TreeNode left;
-    private TreeNode right;
+    private TreeNode<T> left;
+    private TreeNode<T> right;
 
     public TreeNode(T value) {
+        // No setter for value
         this.value = value;
         this.setLeft(null);
         this.setRight(null);
     }
 
+    /*
+     * Getters and Setters Section
+     */
+
     public T getValue() {
         return value;
     }
 
-    public TreeNode getLeft() {
+    public TreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(TreeNode left) {
+    public void setLeft(TreeNode<T> left) {
         this.left = left;
     }
 
-    public TreeNode getRight() {
+    public TreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(TreeNode right) {
+    public void setRight(TreeNode<T> right) {
         this.right = right;
     }
 }

@@ -5,16 +5,8 @@ import java.util.ArrayList;
 public class BinaryTree<T> {
     private TreeNode<T> root;
 
-    public TreeNode<T> getRoot() {
-        return root;
-    }
-
     public BinaryTree() {
         this.setRoot(null);
-    }
-
-    public void setRoot(TreeNode<T> root) {
-        this.root = root;
     }
 
     public ArrayList<T> preOrder() {
@@ -60,5 +52,17 @@ public class BinaryTree<T> {
         if (tree.getRight() != null)
             this.postOrderHelper(tree.getRight(), outputArray);
         outputArray.add(tree.getValue());
+    }
+
+    /*
+     * Setters and Getters Section
+     */
+
+    public void setRoot(TreeNode<T> root) {
+        this.root = root;
+    }
+
+    public TreeNode<T> getRoot() {
+        return root;
     }
 }
