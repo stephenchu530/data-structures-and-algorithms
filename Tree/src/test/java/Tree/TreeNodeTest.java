@@ -1,6 +1,9 @@
 package Tree;
 
 import org.junit.*;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class TreeNodeTest {
@@ -21,6 +24,7 @@ public class TreeNodeTest {
         TreeNode<Integer> testNodeInt = new TreeNode<>(1);
         TreeNode<Character> testNodeChar = new TreeNode<>('A');
         TreeNode<String> testNodeString = new TreeNode<>("I am a string");
+        TreeNode<ArrayList> testNodeArray = new TreeNode<ArrayList>(new ArrayList<>());
     }
 
     @Test

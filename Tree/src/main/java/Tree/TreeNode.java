@@ -6,7 +6,7 @@ public class TreeNode<T> {
     private TreeNode<T> right;
 
     public TreeNode(T value) {
-        // No setter for value
+        // No setter for value because set only once
         this.value = value;
         this.setLeft(null);
         this.setRight(null);
