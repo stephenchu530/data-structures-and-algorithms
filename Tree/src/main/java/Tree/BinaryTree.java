@@ -19,40 +19,46 @@ public class BinaryTree<T> {
 
     public ArrayList<T> preOrder() {
         ArrayList<T> outputArray = new ArrayList<>();
-        preOrderHelper(this.getRoot(), outputArray);
+        if (this.getRoot() != null)
+            preOrderHelper(this.getRoot(), outputArray);
         return outputArray;
     }
 
     public ArrayList<T> inOrder() {
         ArrayList<T> outputArray = new ArrayList<>();
-        inOrderHelper(this.getRoot(), outputArray);
+        if (this.getRoot() != null)
+            inOrderHelper(this.getRoot(), outputArray);
         return outputArray;
     }
 
     public ArrayList<T> postOrder() {
         ArrayList<T> outputArray = new ArrayList<>();
-        postOrderHelper(this.getRoot(), outputArray);
+        if (this.getRoot() != null)
+            postOrderHelper(this.getRoot(), outputArray);
         return outputArray;
     }
 
     private void preOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
-        if (tree == null) return;
         outputArray.add(tree.getValue());
-        this.preOrderHelper(tree.getLeft(), outputArray);
-        this.preOrderHelper(tree.getRight(), outputArray);
+        if (tree.getLeft() != null)
+            this.preOrderHelper(tree.getLeft(), outputArray);
+        if (tree.getRight() != null)
+            this.preOrderHelper(tree.getRight(), outputArray);
     }
 
     private void inOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
-        if (tree == null) return;
-        this.inOrderHelper(tree.getLeft(), outputArray);
+        if (tree.getLeft() != null)
+            this.inOrderHelper(tree.getLeft(), outputArray);
         outputArray.add(tree.getValue());
-        this.inOrderHelper(tree.getRight(), outputArray);
+        if (tree.getRight() != null)
+            this.inOrderHelper(tree.getRight(), outputArray);
     }
 
     private void postOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
-        if (tree == null) return;
-        this.postOrderHelper(tree.getLeft(), outputArray);
-        this.postOrderHelper(tree.getRight(), outputArray);
+        if (tree.getLeft() != null)
+            this.postOrderHelper(tree.getLeft(), outputArray);
+        if (tree.getRight() != null)
+            this.postOrderHelper(tree.getRight(), outputArray);
         outputArray.add(tree.getValue());
     }
 }
