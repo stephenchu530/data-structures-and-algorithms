@@ -45,6 +45,8 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
         if (treeNode.getValue().equals(value))
             return true;
 
-        return this.containsHelper(treeNode.getLeft(), value) || this.containsHelper(treeNode.getRight(), value);
+        return (value.compareTo(treeNode.getValue()) < 0) ?
+                this.containsHelper(treeNode.getLeft(), value) :
+                this.containsHelper(treeNode.getRight(), value);
     }
 }
