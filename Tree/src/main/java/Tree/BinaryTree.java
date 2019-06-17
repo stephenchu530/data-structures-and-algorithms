@@ -69,6 +69,6 @@ public class BinaryTree<T> {
     }
 
     public TreeNode<T> getRoot() {
-        return root;
+        return this.root;
     }
 }
