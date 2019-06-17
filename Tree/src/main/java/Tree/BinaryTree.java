@@ -32,8 +32,10 @@ public class BinaryTree<T> {
 
     private void preOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
         outputArray.add(tree.getValue());
+
         if (tree.getLeft() != null)
             this.preOrderHelper(tree.getLeft(), outputArray);
+
         if (tree.getRight() != null)
             this.preOrderHelper(tree.getRight(), outputArray);
     }
@@ -41,7 +43,9 @@ public class BinaryTree<T> {
     private void inOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
         if (tree.getLeft() != null)
             this.inOrderHelper(tree.getLeft(), outputArray);
+
         outputArray.add(tree.getValue());
+
         if (tree.getRight() != null)
             this.inOrderHelper(tree.getRight(), outputArray);
     }
@@ -49,8 +53,10 @@ public class BinaryTree<T> {
     private void postOrderHelper(TreeNode<T> tree, ArrayList<T> outputArray) {
         if (tree.getLeft() != null)
             this.postOrderHelper(tree.getLeft(), outputArray);
+
         if (tree.getRight() != null)
             this.postOrderHelper(tree.getRight(), outputArray);
+
         outputArray.add(tree.getValue());
     }
 
