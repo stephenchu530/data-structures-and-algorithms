@@ -1,4 +1,4 @@
-# Queue With Stacks
+# Trees
 <!-- Short summary or background information -->
 This is a solo code challenge project to learn how to work with trees.
 
