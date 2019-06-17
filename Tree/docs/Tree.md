@@ -35,7 +35,7 @@ The following are the specs for this project:
 
 * `ArrayList<T> BinaryTree.postOrder()` - returns an array of the tree's values post-order
 
-* `void BinarySearchTree.add(T value` - adds a new `TreeNode` with a given `value` to the `BinarySearchTree`
+* `void BinarySearchTree.add(T value)` - adds a new `TreeNode` with a given `value` to the `BinarySearchTree`
 
 * `Boolean BinarySearchTree.contains(T value)` - accepts a `value` and returns a `boolean` whether or not the tree contains that `value`
 ## Solution (Code)
