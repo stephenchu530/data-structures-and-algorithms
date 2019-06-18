@@ -14,3 +14,4 @@ READMEs
 * [FIFO Animal Shelter](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/fifoAnimalShelter/docs/fifoAnimalShelter.md)
 * [Multi Bracket Validation](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/MultiBracketValidation/docs/MultiBracketValidation.md)
 * [Trees](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/docs/Tree.md)
+* [Fizz Buzz Tree](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/FizzBuzzTree/docs/FizzBuzzTree.md)
