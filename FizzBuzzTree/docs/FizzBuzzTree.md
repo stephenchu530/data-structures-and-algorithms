@@ -61,6 +61,10 @@ Space Complexity: `O(1)`
 <!-- Link to code -->
 [Fizz Buzz Tree](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/FizzBuzzTree/src/main/java/FizzBuzzTree/App.java)
 
+## Solution (Whiteboard)
+<!-- Embedded whiteboard image -->
+![Whiteboard](assets/FizzBuzzTree.jpg)
+
 ## Contributors
 * Stephen Chu, [stephenchu530](https://github.com/stephenchu530)
 
