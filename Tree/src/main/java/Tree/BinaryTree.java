@@ -9,6 +9,26 @@ public class BinaryTree<T> {
         this.setRoot(null);
     }
 
+    public String breadthFirst() {
+        StringBuilder output = new StringBuilder();
+        TreeNode<T> tempTreeNode;
+        ArrayList<TreeNode<T>> tempQueue = new ArrayList<>();
+
+        if (this.getRoot() != null) {
+            tempQueue.add(this.getRoot());
+            while (!tempQueue.isEmpty()) {
+                tempTreeNode = tempQueue.remove(0);
+                output.append(tempTreeNode.getValue());
+                output.append(" ");
+                if (tempTreeNode.getLeft() != null)
+                    tempQueue.add(tempTreeNode.getLeft());
+                if (tempTreeNode.getRight() != null)
+                    tempQueue.add(tempTreeNode.getRight());
+            }
+        }
+        return output.toString().trim();
+    }
+
     public ArrayList<T> preOrder() {
         ArrayList<T> outputArray = new ArrayList<>();
         if (this.getRoot() != null)
