@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BinaryTreeTest {
     public BinaryTree<Integer> bTree;
@@ -49,6 +50,13 @@ public class BinaryTreeTest {
         assertEquals("Should return the proper output",
                 new ArrayList<>(Arrays.asList(4, 5, 2, 6, 7, 3, 1)),
                 this.bTree.postOrder()
+        );
+    }
+
+    @Test
+    public void testBreadthFirst() {
+        assertTrue("Should return the tree in breadth first order",
+                this.bTree.breadthFirst().equals("1 2 3 4 5 6 7")
         );
     }
 }
