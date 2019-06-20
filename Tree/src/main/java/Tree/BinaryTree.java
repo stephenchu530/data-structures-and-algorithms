@@ -2,11 +2,47 @@ package Tree;
 
 import java.util.ArrayList;
 
-public class BinaryTree<T> {
+public class BinaryTree<T extends Comparable<T>> {
     private TreeNode<T> root;
 
     public BinaryTree() {
         this.setRoot(null);
+    }
+
+    public void getMax() {
+        if (this.getRoot() == null)
+            System.out.println("Empty tree. Nothing to find max on!");
+        else
+            // Calls the recursive helper method
+            System.out.println(getMaxHelper(this.getRoot()));
+    }
+
+    public T getMaxHelper(TreeNode<T> node) {
+        TreeNode<T> leftNode = node.getLeft();
+        TreeNode<T> rightNode = node.getRight();
+
+        T currentValue = node.getValue();
+
+        if (leftNode == null && rightNode == null)
+            return currentValue;
+
+        T leftValue = null;
+        T rightValue = null;
+
+        if (leftNode != null)
+            leftValue = this.getMaxHelper(node.getLeft());
+        if (rightNode != null)
+            rightValue = this.getMaxHelper(node.getRight());
+
+        if (leftValue == null)
+            return (currentValue.compareTo(rightValue) < 0) ? rightValue : currentValue;
+
+        if (rightValue == null)
+            return (currentValue.compareTo(leftValue) < 0) ? leftValue : currentValue;
+
+        T bigger = (leftValue.compareTo(rightValue) < 0) ? rightValue : leftValue;
+
+        return (currentValue.compareTo(bigger) < 0) ? bigger : currentValue;
     }
 
     public String breadthFirst() {

@@ -16,3 +16,4 @@ READMEs
 * [Trees](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/docs/Tree.md)
 * [Fizz Buzz Tree](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/FizzBuzzTree/docs/FizzBuzzTree.md)
 * [Breadth First](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/docs/BreadthFirst.md)
+* [Find Maximum Value](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/docs/FindMaximumValue.md)

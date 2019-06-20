@@ -59,4 +59,48 @@ public class BinaryTreeTest {
                 this.bTree.breadthFirst().equals("1 2 3 4 5 6 7")
         );
     }
+
+    @Test
+    public void testGetMaxValueSingleNode() {
+        assertTrue("Should return the value of the only node",
+                bTree.getMaxHelper(new TreeNode<>(4)).equals(4));
+    }
+
+    @Test
+    public void testGetMaxValueLeftNode() {
+        TreeNode<Integer> root = new TreeNode<Integer>(5);
+        TreeNode<Integer> left = new TreeNode<Integer>(8);
+        root.setLeft(left);
+
+        assertTrue("Should return the max value",
+                bTree.getMaxHelper(root).equals(8));
+    }
+
+    @Test
+    public void testGetMaxValueRightNode() {
+        TreeNode<Integer> root = new TreeNode<Integer>(8);
+        TreeNode<Integer> right = new TreeNode<Integer>(3);
+        root.setRight(right);
+
+        assertTrue("Should return the max value",
+                bTree.getMaxHelper(root).equals(8));
+    }
+
+    @Test
+    public void testGetMaxValueLeftRightNode() {
+        TreeNode<Integer> root = new TreeNode<Integer>(8);
+        TreeNode<Integer> left = new TreeNode<Integer>(9);
+        TreeNode<Integer> right = new TreeNode<Integer>(10);
+        root.setLeft(left);
+        root.setRight(right);
+
+        assertTrue("Should return the max value",
+                bTree.getMaxHelper(root).equals(10));
+    }
+
+    @Test
+    public void testGetMaxValueBig() {
+        assertTrue("Should return the max value",
+                bTree.getMaxHelper(this.bTree.getRoot()).equals(7));
+    }
 }
