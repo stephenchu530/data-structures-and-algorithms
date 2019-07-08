@@ -7,8 +7,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class HashTableTest {
-    @Test public void testSomeLibraryMethod() {
-        HashTable classUnderTest = new HashTable();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+    @Test public void testEmpty() {
     }
 }
