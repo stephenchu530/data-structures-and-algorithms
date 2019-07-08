@@ -12,10 +12,9 @@ public class HashTableTest {
 
     @Before
     public void setUpHashTable() {
-
+        this.testHT = new HashTable<Integer>();
     }
 
     @Test public void testHTInstantiate() {
-        HashTable<Integer> testHashTable = new HashTable<Integer>();
     }
 }

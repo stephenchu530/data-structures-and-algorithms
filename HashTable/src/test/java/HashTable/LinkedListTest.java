@@ -56,4 +56,23 @@ public class LinkedListTest {
                 this.testLL.getNode("test2")
         );
     }
+
+    @Test
+    public void testGetSize() {
+        this.testLL.addNode("test3", 3);
+        assertEquals("Should return the proper size",
+                1,
+                this.testLL.getSize()
+        );
+        this.testLL.addNode("test4", 4);
+        assertEquals("Should return the proper size",
+                2,
+                this.testLL.getSize()
+        );
+        this.testLL.addNode("test5", 5);
+        assertEquals("Should return the proper size",
+                3,
+                this.testLL.getSize()
+        );
+    }
 }

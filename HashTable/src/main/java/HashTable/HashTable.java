@@ -4,12 +4,18 @@
 package HashTable;
 
 
+import java.util.ArrayList;
+
+import static java.lang.Character.getNumericValue;
+
 public class HashTable<T> {
     private LinkedList<T> table[];
     private int used;
     private int size;
     private double load;
-    private final int STARTSIZE = 4;
+    private final int STARTSIZE = 1024;
+    private final long PRIMEONE = 51383;
+    private final long PRIMETWO = 71353;
 
     public HashTable() {
         this.setUsed(0);
@@ -18,8 +24,32 @@ public class HashTable<T> {
         this.setTable(new LinkedList[STARTSIZE]);
     }
 
-    private int hash(String key) {
-        return 0;
+    public void add(String key, T value) {
+
+    }
+
+    public void get() {
+
+    }
+
+    public boolean contains(String key) {
+        LinkedList<T> linkedList = this.getTable()[this.hash(key)];
+        if (linkedList == null)
+            return false;
+        if (linkedList.getSize() == 0)
+            return false;
+        if (linkedList.getNode(key) == null)
+            return false;
+        return true;
+    }
+
+    public int hash(String key) {
+        long number = 1L;
+
+        for (int i = 0; i < key.length(); i++)
+            number += ((long) key.charAt(i) + PRIMEONE + i) * PRIMETWO;
+
+        return (int) (number % (long) this.size);
     }
 
     private LinkedList<T>[] getTable() {
@@ -83,7 +113,7 @@ class LinkedList<T> {
         return null;
     }
 
-    private int getSize() {
+    public int getSize() {
         return this.size;
     }
 
