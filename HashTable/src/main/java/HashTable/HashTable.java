@@ -5,52 +5,98 @@ package HashTable;
 
 
 public class HashTable<T> {
-    private Node<T> table[];
+    private LinkedList<T> table[];
     private int used;
     private int size;
     private double load;
+    private final int STARTSIZE = 4;
 
     public HashTable() {
         this.setUsed(0);
-        this.setSize(4);
+        this.setSize(STARTSIZE);
         this.setLoad(0.0);
-        this.setTable(new Node[4]);
+        this.setTable(new LinkedList[STARTSIZE]);
     }
 
     private int hash(String key) {
         return 0;
     }
 
-    public Node<T>[] getTable() {
+    private LinkedList<T>[] getTable() {
         return this.table;
     }
 
-    public void setTable(Node<T>[] table) {
+    private void setTable(LinkedList<T>[] table) {
         this.table = table;
     }
 
-    public int getUsed() {
+    private int getUsed() {
         return this.used;
     }
 
-    public void setUsed(int used) {
+    private void setUsed(int used) {
         this.used = used;
     }
 
-    public int getSize() {
+    private int getSize() {
         return this.size;
     }
 
-    public void setSize(int size) {
+    private void setSize(int size) {
         this.size = size;
     }
 
-    public double getLoad() {
+    private double getLoad() {
         return this.load;
     }
 
-    public void setLoad(double load) {
+    private void setLoad(double load) {
         this.load = load;
+    }
+}
+
+class LinkedList<T> {
+    private int size;
+    private Node<T> head;
+
+    public LinkedList() {
+        this.setSize(0);
+        this.setHead(null);
+    }
+
+    public Node<T> addNode(String key, T value) {
+        Node<T> newNode = new Node<T>(key, value);
+        newNode.setNext(this.getHead());
+        this.setHead(newNode);
+        this.setSize(this.getSize() + 1);
+        return newNode;
+    }
+
+    public Node<T> getNode(String key) {
+        Node<T> walker = this.getHead();
+        while (walker != null) {
+            if (walker.getKey() == key) {
+                return walker;
+            }
+            walker = walker.getNext();
+        }
+        return null;
+    }
+
+    private int getSize() {
+        return this.size;
+    }
+
+    private void setSize(int size) {
+        this.size = size;
+    }
+
+    private Node<T> getHead() {
+        return this.head;
+    }
+
+    private void setHead(Node<T> head) {
+        this.head = head;
     }
 }
 
@@ -59,7 +105,7 @@ class Node<T> {
     private T value;
     private Node<T> next;
 
-    public Node(String key, T value, Node<T> next) {
+    public Node(String key, T value) {
         this.setKey(key);
         this.setValue(value);
         this.setNext(null);

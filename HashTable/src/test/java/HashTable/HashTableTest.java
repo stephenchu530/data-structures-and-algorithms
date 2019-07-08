@@ -3,10 +3,19 @@
  */
 package HashTable;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class HashTableTest {
-    @Test public void testEmpty() {
+    public HashTable<Integer> testHT;
+
+    @Before
+    public void setUpHashTable() {
+
+    }
+
+    @Test public void testHTInstantiate() {
+        HashTable<Integer> testHashTable = new HashTable<Integer>();
     }
 }
