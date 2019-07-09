@@ -3,6 +3,7 @@
  */
 package HashTable;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -15,15 +16,81 @@ public class HashTableTest {
         this.testHT = new HashTable<Integer>();
     }
 
+    @After
+    public void tearDownHashTable() {
+        this.testHT = null;
+    }
+
     @Test public void testHTInstantiate() {
+        HashTable<Integer> testHashTable = new HashTable<Integer>();
+    }
+
+    @Test public void testEmptyHTGet() {
+        assertNull("Should be return null",
+                this.testHT.get("should not be here")
+        );
+    }
+
+    @Test public void testEmptyHTContain() {
+        assertFalse("Should be return false",
+                this.testHT.contains("should not be here")
+        );
+    }
+
+    @Test public void testEmptyHTLoad() {
+        assertEquals("Should be at zero load",
+                0.0,
+                this.testHT.getLoad(),
+                0.00001
+        );
+    }
+
+    @Test public void testAddSingleItem() {
         this.testHT.add("test1", 1);
-        assertTrue(this.testHT.get("test1").equals(1));
+        assertTrue("Should be return value",
+                this.testHT.get("test1").equals(1)
+        );
+        assertTrue("Should be return true",
+                this.testHT.contains("test1")
+        );
+        assertNull("Should be return value",
+                this.testHT.get("test2222")
+        );
+        assertFalse("Should be return false",
+                this.testHT.contains("test2222")
+        );
+        assertEquals("Should return a non zero load",
+                0.0009765,
+                this.testHT.getLoad(),
+                0.0000001
+        );
+    }
+
+    @Test public void testAddTwoItems() {
+        this.testHT.add("test1", 1);
         this.testHT.add("test2", 2);
-        assertTrue(this.testHT.get("test2").equals(2));
-        this.testHT.add("test1", 3);
-        assertTrue(this.testHT.get("test1").equals(3));
-        assertTrue(this.testHT.contains("test1"));
-        assertTrue(this.testHT.contains("test2"));
-        assertFalse(this.testHT.contains("test3"));
+        assertTrue("Should be return value",
+                this.testHT.get("test1").equals(1)
+        );
+        assertTrue("Should be return value",
+                this.testHT.get("test2").equals(2)
+        );
+        assertTrue("Should be return true",
+                this.testHT.contains("test1")
+        );
+        assertTrue("Should be return true",
+                this.testHT.contains("test2")
+        );
+        assertNull("Should be return value",
+                this.testHT.get("test2222")
+        );
+        assertFalse("Should be return false",
+                this.testHT.contains("test2222")
+        );
+        assertEquals("Should return a non zero load",
+                0.00195,
+                this.testHT.getLoad(),
+                0.00001
+        );
     }
 }

@@ -8,7 +8,7 @@ public class HashTable<T> {
     private int used;
     private int size;
     private double load;
-    private final int STARTSIZE = 1;
+    private final int STARTSIZE = 1024;
     private final long PRIMEONE = 51383;
     private final long PRIMETWO = 71353;
 
@@ -35,7 +35,7 @@ public class HashTable<T> {
         }
 
         this.setUsed(this.getUsed() + 1);
-        this.setLoad(this.getUsed() / this.getSize());
+        this.setLoad((double) this.getUsed() / this.getSize());
     }
 
     public T get(String key) {
@@ -51,7 +51,7 @@ public class HashTable<T> {
         return true;
     }
 
-    public int hash(String key) {
+    private int hash(String key) {
         long number = 1L;
 
         for (int i = 0; i < key.length(); i++)
@@ -93,7 +93,7 @@ public class HashTable<T> {
         this.size = size;
     }
 
-    private double getLoad() {
+    public double getLoad() {
         return this.load;
     }
 
