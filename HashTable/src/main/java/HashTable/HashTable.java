@@ -3,17 +3,12 @@
  */
 package HashTable;
 
-
-import java.util.ArrayList;
-
-import static java.lang.Character.getNumericValue;
-
 public class HashTable<T> {
     private LinkedList<T> table[];
     private int used;
     private int size;
     private double load;
-    private final int STARTSIZE = 1024;
+    private final int STARTSIZE = 1;
     private final long PRIMEONE = 51383;
     private final long PRIMETWO = 71353;
 
@@ -25,20 +20,33 @@ public class HashTable<T> {
     }
 
     public void add(String key, T value) {
+        Node<T> helperNode = getNodeHelper(key);
+        if (helperNode == null) {
+            if (this.getTable()[this.hash(key)] == null) {
+                LinkedList<T> ll = new LinkedList<T>();
+                ll.addNode(key, value);
+                this.getTable()[this.hash(key)] = ll;
+            } else {
+                this.getTable()[this.hash(key)].addNode(key, value);
+            }
+        }
+        else {
+            this.getTable()[this.hash(key)].getNode(key).setValue(value);
+        }
 
+        this.setUsed(this.getUsed() + 1);
+        this.setLoad(this.getUsed() / this.getSize());
     }
 
-    public void get() {
-
+    public T get(String key) {
+        Node<T> node = getNodeHelper(key);
+        if (node == null)
+            return null;
+        return node.getValue();
     }
 
     public boolean contains(String key) {
-        LinkedList<T> linkedList = this.getTable()[this.hash(key)];
-        if (linkedList == null)
-            return false;
-        if (linkedList.getSize() == 0)
-            return false;
-        if (linkedList.getNode(key) == null)
+        if (getNodeHelper(key) == null)
             return false;
         return true;
     }
@@ -50,6 +58,15 @@ public class HashTable<T> {
             number += ((long) key.charAt(i) + PRIMEONE + i) * PRIMETWO;
 
         return (int) (number % (long) this.size);
+    }
+
+    private Node<T> getNodeHelper(String key) {
+        LinkedList<T> linkedList = this.getTable()[this.hash(key)];
+        if (linkedList == null)
+            return null;
+        if (linkedList.getSize() == 0)
+            return null;
+        return linkedList.getNode(key);
     }
 
     private LinkedList<T>[] getTable() {

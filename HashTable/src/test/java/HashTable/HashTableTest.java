@@ -16,5 +16,14 @@ public class HashTableTest {
     }
 
     @Test public void testHTInstantiate() {
+        this.testHT.add("test1", 1);
+        assertTrue(this.testHT.get("test1").equals(1));
+        this.testHT.add("test2", 2);
+        assertTrue(this.testHT.get("test2").equals(2));
+        this.testHT.add("test1", 3);
+        assertTrue(this.testHT.get("test1").equals(3));
+        assertTrue(this.testHT.contains("test1"));
+        assertTrue(this.testHT.contains("test2"));
+        assertFalse(this.testHT.contains("test3"));
     }
 }
