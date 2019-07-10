@@ -12,9 +12,11 @@ public class RepeatedWord {
         HashMap<String, Integer> bagOfWords = new HashMap<>();
 
         for (String word: words) {
+            // Regex taken from:
+            // https://stackoverflow.com/questions/12506655/how-can-i-remove-all-leading-and-trailing-punctuation
             tmpWord = word.toLowerCase().replaceAll("[^a-zA-Z]+$", "");
-            if (bagOfWords.containsKey(tmpWord)) {
-                System.out.println(tmpWord);return tmpWord;}
+            if (bagOfWords.containsKey(tmpWord))
+                return tmpWord;
             else
                 bagOfWords.put(tmpWord, 1);
         }

@@ -18,3 +18,7 @@ This is a solo code challenge project to solve a problem.
 ## Solution (Code)
 <!-- Link to code -->
 [Repeated Word Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/RepeatedWord/src/main/java/RepeatedWord/RepeatedWord.java)
+
+## White Board Pic
+<!-- Link to image -->
+![Repeated Word Whiteboard](./RepeatedWord.jpg)
