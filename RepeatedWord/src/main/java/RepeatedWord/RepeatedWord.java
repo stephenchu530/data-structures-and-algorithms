@@ -3,8 +3,21 @@
  */
 package RepeatedWord;
 
+import java.util.HashMap;
+
 public class RepeatedWord {
-    public boolean someLibraryMethod() {
-        return true;
+    public static String repeatedWord(String longStringOfWords) {
+        String words[] = longStringOfWords.split(" ");
+        String tmpWord = "";
+        HashMap<String, Integer> bagOfWords = new HashMap<>();
+
+        for (String word: words) {
+            tmpWord = word.toLowerCase().replaceAll("[^a-zA-Z]+$", "");
+            if (bagOfWords.containsKey(tmpWord)) {
+                System.out.println(tmpWord);return tmpWord;}
+            else
+                bagOfWords.put(tmpWord, 1);
+        }
+        return null;
     }
 }
