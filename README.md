@@ -19,3 +19,4 @@ READMEs
 * [Find Maximum Value](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Tree/docs/FindMaximumValue.md)
 * [Hash Tables](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/HashTable/docs/HashTable.md)
 * [Repeated Words](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/RepeatedWord/docs/RepeatedWord.md)
+* [Tree Intersection](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/TreeIntersection/docs/TreeIntersection.md)
