@@ -43,6 +43,3 @@ The graph data structure will contain the following methods:
 <!-- Link to code -->
 [Graph Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Graph/src/main/java/Graph/Graph.java)
 
-## White Board Pic
-<!-- Link to image -->
-![Graph Whiteboard](./Graph.jpg)
