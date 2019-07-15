@@ -18,7 +18,7 @@ This is a solo code challenge project to solve a problem.
 
 ## Solution (Code)
 <!-- Link to code -->
-[Left Join Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/LeftJoin/src/main/java/leftJoin/LeftJoin.java)
+[Left Join Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/LeftJoin/src/main/java/LeftJoin/LeftJoin.java)
 
 ## White Board Pic
 <!-- Link to image -->
