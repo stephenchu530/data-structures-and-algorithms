@@ -20,3 +20,6 @@ The graph data structure will have a new method:
 <!-- Link to code -->
 [Breadth First Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/BreadthFirstGraph/src/main/java/BreadthFirstGraph/BreadthFirst.java)
 
+## Solution (Whiteboard)
+<!-- Link to image -->
+![Whiteboard](./BreadthFirstGraph.jpg)
