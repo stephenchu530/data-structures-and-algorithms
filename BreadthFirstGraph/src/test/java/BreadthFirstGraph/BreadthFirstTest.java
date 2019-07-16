@@ -5,33 +5,109 @@ package BreadthFirstGraph;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class BreadthFirstTest {
 
-    public BreadthFirst<Integer> testGraph;
+    public BreadthFirst<Integer> testGraph1;
+    public BreadthFirst<Integer> testGraph2;
+    public BreadthFirst<Integer> testGraph3;
 
     @Before
-    public void setUpGraph() {
-        this.testGraph = new BreadthFirst<>();
-        this.testGraph.addNode(11);
-        this.testGraph.addNode(22);
-        this.testGraph.addNode(33);
-        GraphNode<Integer> node1 = this.testGraph.getNodes().get(0);
-        GraphNode<Integer> node2 = this.testGraph.getNodes().get(1);
-        GraphNode<Integer> node3 = this.testGraph.getNodes().get(2);
-        this.testGraph.addEdge(node1, node2, 22);
-        this.testGraph.addEdge(node1, node3, 33);
+    public void setUpGraph1() {
+        this.testGraph1 = new BreadthFirst<>();
+        this.testGraph1.addNode(11);
+        this.testGraph1.addNode(22);
+        this.testGraph1.addNode(33);
+        GraphNode<Integer> node1 = this.testGraph1.getNodes().get(0);
+        GraphNode<Integer> node2 = this.testGraph1.getNodes().get(1);
+        GraphNode<Integer> node3 = this.testGraph1.getNodes().get(2);
+        this.testGraph1.addEdge(node1, node2, 22);
+        this.testGraph1.addEdge(node1, node3, 33);
+    }
+
+    @Before
+    public void setUpGraph2() {
+        this.testGraph2 = new BreadthFirst<>();
+        this.testGraph2.addNode(11);
+        this.testGraph2.addNode(22);
+        this.testGraph2.addNode(33);
+        this.testGraph2.addNode(44);
+        this.testGraph2.addNode(55);
     }
 
     @Test
-    public void testBreadthFirst() {
-        GraphNode<Integer> node1 = this.testGraph.getNodes().get(0);
-        GraphNode<Integer> node2 = this.testGraph.getNodes().get(1);
-        GraphNode<Integer> node3 = this.testGraph.getNodes().get(2);
+    public void testBreadthFirst1() {
+        GraphNode<Integer> node1 = this.testGraph1.getNodes().get(0);
+        GraphNode<Integer> node2 = this.testGraph1.getNodes().get(1);
+        GraphNode<Integer> node3 = this.testGraph1.getNodes().get(2);
 
-        System.out.println(this.testGraph.breadthFirst(node1));
-        System.out.println(this.testGraph.breadthFirst(node2));
-        System.out.println(this.testGraph.breadthFirst(node3));
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node1).equals(Arrays.asList(11, 22, 33))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node2).equals(Arrays.asList(22, 11, 33))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node3).equals(Arrays.asList(33, 11, 22))
+        );
+    }
+
+    @Test
+    public void testBreadthFirst2() {
+        GraphNode<Integer> node1 = this.testGraph2.getNodes().get(0);
+        GraphNode<Integer> node2 = this.testGraph2.getNodes().get(1);
+        GraphNode<Integer> node3 = this.testGraph2.getNodes().get(2);
+        GraphNode<Integer> node4 = this.testGraph2.getNodes().get(3);
+        GraphNode<Integer> node5 = this.testGraph2.getNodes().get(4);
+
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node1).equals(Arrays.asList(11))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node2).equals(Arrays.asList(22))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node3).equals(Arrays.asList(33))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node4).equals(Arrays.asList(44))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node5).equals(Arrays.asList(55))
+        );
+    }
+
+    @Test
+    public void testBreadthFirst3() {
+        GraphNode<Integer> node1 = this.testGraph2.getNodes().get(0);
+        GraphNode<Integer> node2 = this.testGraph2.getNodes().get(1);
+        GraphNode<Integer> node3 = this.testGraph2.getNodes().get(2);
+        GraphNode<Integer> node4 = this.testGraph2.getNodes().get(3);
+        GraphNode<Integer> node5 = this.testGraph2.getNodes().get(4);
+        this.testGraph2.addEdge(node1, node2, 22);
+        this.testGraph2.addEdge(node1, node3, 33);
+        this.testGraph2.addEdge(node1, node4, 44);
+        this.testGraph2.addEdge(node1, node5, 55);
+
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node1).equals(Arrays.asList(11, 44, 33, 55, 22))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node2).equals(Arrays.asList(22, 11, 44, 33, 55))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node3).equals(Arrays.asList(33, 11, 44, 55, 22))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node4).equals(Arrays.asList(44, 11, 33, 55, 22))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node5).equals(Arrays.asList(55, 11, 44, 33, 22))
+        );
     }
 }
