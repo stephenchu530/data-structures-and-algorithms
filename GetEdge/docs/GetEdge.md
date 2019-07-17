@@ -14,12 +14,12 @@ Write a function based on the specifications above, which takes in a graph, and 
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-* `public <Boolean, Integer> getEdge(ArrayList<T> nodes)` - accepts an array list of nodes and returns a boolean if there exists a path in the order of the given node values along with the sum of the edge weights. 
+* `public String[] getEdge(Graph<T> graph, T[] arr)` - accepts an array list of nodes and returns a boolean if there exists a path in the order of the given node values along with the sum of the edge weights. 
 
 ## Solution (Code)
 <!-- Link to code -->
-[Breadth First Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/BreadthFirstGraph/src/main/java/BreadthFirstGraph/BreadthFirst.java)
+[Get Edge Code](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/GetEdge/src/main/java/GetEdge/GetEdge.java)
 
 ## Solution (Whiteboard)
 <!-- Link to image -->
-![Whiteboard](./BreadthFirstGraph.jpg)
+![Whiteboard](./GetEdge.jpg)

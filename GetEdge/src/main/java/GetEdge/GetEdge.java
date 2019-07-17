@@ -16,11 +16,34 @@ public class GetEdge<T> {
         this.setNodes(new ArrayList<GraphNode<T>>());
     }
 
-    public HashMap<Boolean, Integer> getEdge(ArrayList<T> nodes) {
-        Boolean foundPath = false;
+    public String[] getEdge(GetEdge<T> graph, T[] arr) {
         Integer sumOfWeights = 0;
+        GraphNode<T> tmpNodeSrc;
+        GraphNode<T> tmpNodeDst;
 
-        return new HashMap<Boolean, Integer>(){foundPath, sumOfWeights};
+        if (arr.length == 0) {
+            return new String[]{String.valueOf(false), String.valueOf(0)};
+        }
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            tmpNodeSrc = this.findNode(graph, arr[i]);
+            tmpNodeDst = this.findNode(graph, arr[i + 1]);
+            if (tmpNodeSrc.getNeighbors().contains(tmpNodeDst)) {
+                sumOfWeights += tmpNodeSrc.getWeights().get(tmpNodeDst);
+            } else {
+                return new String[]{String.valueOf(false), String.valueOf(0)};
+            }
+        }
+        return new String[]{String.valueOf(true), String.valueOf(sumOfWeights)};
+    }
+
+    public GraphNode<T> findNode(GetEdge<T> graph, T value) {
+        ArrayList<GraphNode<T>> listOfNodes = graph.getNodes();
+        for (GraphNode<T> node: listOfNodes) {
+            if (node.getValue().equals(value))
+                return node;
+        }
+        return null;
     }
 
     public ArrayList<T> breadthFirst(GraphNode<T> node) {
@@ -109,11 +132,11 @@ class GraphNode<T> {
     }
 
     public void setNeighbors(ArrayList<GraphNode<T>> neighbors) {
-        this.neighbors = new ArrayList(neighbors);
+        this.neighbors = new ArrayList<>(neighbors);
     }
 
     public ArrayList<GraphNode<T>> getNeighbors() {
-        return new ArrayList(this.neighbors);
+        return new ArrayList<>(this.neighbors);
     }
 
     public void setWeights(HashMap<GraphNode<T>, Integer> weights) {
