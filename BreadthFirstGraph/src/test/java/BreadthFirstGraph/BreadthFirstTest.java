@@ -15,7 +15,6 @@ public class BreadthFirstTest {
 
     public BreadthFirst<Integer> testGraph1;
     public BreadthFirst<Integer> testGraph2;
-    public BreadthFirst<Integer> testGraph3;
 
     @Before
     public void setUpGraph1() {
@@ -46,15 +45,15 @@ public class BreadthFirstTest {
         GraphNode<Integer> node2 = this.testGraph1.getNodes().get(1);
         GraphNode<Integer> node3 = this.testGraph1.getNodes().get(2);
 
-//        assertTrue("Should return the proper output",
-//                this.testGraph1.breadthFirst(node1).equals(Arrays.asList(11, 22, 33))
-//        );
-//        assertTrue("Should return the proper output",
-//                this.testGraph1.breadthFirst(node2).equals(Arrays.asList(22, 11, 33))
-//        );
-//        assertTrue("Should return the proper output",
-//                this.testGraph1.breadthFirst(node3).equals(Arrays.asList(33, 11, 22))
-//        );
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node1).equals(Arrays.asList(11, 22, 33))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node2).equals(Arrays.asList(22, 11, 33))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph1.breadthFirst(node3).equals(Arrays.asList(33, 11, 22))
+        );
     }
 
     @Test
@@ -94,25 +93,20 @@ public class BreadthFirstTest {
         this.testGraph2.addEdge(node1, node4, 44);
         this.testGraph2.addEdge(node1, node5, 55);
 
-        System.out.println(this.testGraph2.breadthFirst(node1));
-//        assertTrue("Should return the same",
-//                this.testGraph2.breadthFirst(node1).equals(new ArrayList(Arrays.asList(11, 22, 33, 55, 44)))
-//        );
-//        //System.out.println(this.testGraph2.breadthFirst(node2));
-//        assertTrue("Should return the proper output",
-//                this.testGraph2.breadthFirst(node2).equals(new ArrayList(Arrays.asList(22, 11, 33, 55, 44)))
-//        );
-//        //System.out.println(this.testGraph2.breadthFirst(node3));
-//        assertTrue("Should return the proper output",
-//                this.testGraph2.breadthFirst(node3).equals(new ArrayList(Arrays.asList(33, 11, 22, 55, 44)))
-//        );
-//        //System.out.println(this.testGraph2.breadthFirst(node4));
-//        assertTrue("Should return the proper output",
-//                this.testGraph2.breadthFirst(node4).equals(new ArrayList(Arrays.asList(44, 11, 22, 33, 55)))
-//        );
-//        //System.out.println(this.testGraph2.breadthFirst(node5));
-//        assertTrue("Should return the proper output",
-//                this.testGraph2.breadthFirst(node5).equals(new ArrayList(Arrays.asList(55, 11, 22, 33, 44)))
-//        );
+        assertTrue("Should return the same",
+                this.testGraph2.breadthFirst(node1).equals(new ArrayList(Arrays.asList(11, 22, 33, 44, 55)))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node2).equals(new ArrayList(Arrays.asList(22, 11, 33, 44, 55)))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node3).equals(new ArrayList(Arrays.asList(33, 11, 22, 44, 55)))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node4).equals(new ArrayList(Arrays.asList(44, 11, 22, 33, 55)))
+        );
+        assertTrue("Should return the proper output",
+                this.testGraph2.breadthFirst(node5).equals(new ArrayList(Arrays.asList(55, 11, 22, 33, 44)))
+        );
     }
 }

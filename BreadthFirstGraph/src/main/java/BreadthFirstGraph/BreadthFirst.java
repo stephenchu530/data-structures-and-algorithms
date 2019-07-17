@@ -27,7 +27,7 @@ public class BreadthFirst<T> {
             queue.add(node);
             while (!queue.isEmpty()) {
                 tmpNode = queue.remove(0);
-                for (GraphNode<T> seeNode: tmpNode.getNeighbors().keySet()) {
+                for (GraphNode<T> seeNode: tmpNode.getNeighbors()) {
                     if (visited.add(seeNode)) {
                         queue.add(seeNode);
                     }
@@ -54,7 +54,7 @@ public class BreadthFirst<T> {
         }
     }
 
-    public HashMap<GraphNode<T>, Integer> getNeighbors(GraphNode<T> node) {
+    public ArrayList<GraphNode<T>> getNeighbors(GraphNode<T> node) {
         return node.getNeighbors();
     }
 
@@ -74,17 +74,22 @@ public class BreadthFirst<T> {
 class GraphNode<T> {
 
     private T value;
-    private HashMap<GraphNode<T>, Integer> neighbors;
+    private ArrayList<GraphNode<T>> neighbors;
+    private HashMap<GraphNode<T>, Integer> weights;
 
     public GraphNode(T value) {
         this.setValue(value);
-        this.setNeighbors(new HashMap<>());
+        this.setNeighbors(new ArrayList<>());
+        this.setWeights(new HashMap<>());
     }
 
     public void addNeighbor(GraphNode<T> node, Integer weight) {
-        HashMap<GraphNode<T>, Integer> tmpHM = this.getNeighbors();
-        tmpHM.put(node, weight);
-        this.setNeighbors(tmpHM);
+        ArrayList<GraphNode<T>> tmpN = this.getNeighbors();
+        HashMap<GraphNode<T>, Integer> tmpW = this.getWeights();
+        tmpN.add(node);
+        tmpW.put(node, weight);
+        this.setNeighbors(tmpN);
+        this.setWeights(tmpW);
     }
 
     public T getValue() {
@@ -95,11 +100,19 @@ class GraphNode<T> {
         this.value = value;
     }
 
-    public HashMap<GraphNode<T>, Integer> getNeighbors() {
-        return new HashMap<>(this.neighbors);
+    public void setNeighbors(ArrayList<GraphNode<T>> neighbors) {
+        this.neighbors = new ArrayList(neighbors);
     }
 
-    public void setNeighbors(HashMap<GraphNode<T>, Integer> neighbors) {
-        this.neighbors = new HashMap<>(neighbors);
+    public ArrayList<GraphNode<T>> getNeighbors() {
+        return new ArrayList(this.neighbors);
+    }
+
+    public void setWeights(HashMap<GraphNode<T>, Integer> weights) {
+        this.weights = new HashMap<>(weights);
+    }
+
+    public HashMap<GraphNode<T>, Integer> getWeights() {
+        return new HashMap<>(this.weights);
     }
 }
