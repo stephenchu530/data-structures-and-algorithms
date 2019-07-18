@@ -24,3 +24,4 @@ READMEs
 * [Graph](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/Graph/docs/Graph.md)
 * [Breadth First Graph](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/BreadthFirstGraph/docs/BreadthFirstGraph.md)
 * [Get Edges](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/GetEdges/docs/GetEdges.md)
+* [Depth First](https://github.com/stephenchu530/data-structures-and-algorithms/blob/master/DepthFirst/docs/DepthFirst.md)
