@@ -1,4 +1,4 @@
-# Get Edge
+# Depth First
 <!-- Short summary or background information -->
 This is the implementation of a pre-order traversal for a graph in Java
 
@@ -10,7 +10,9 @@ Create a function that accepts an adjacency list as a graph, and conducts a dept
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-* `depthFirst()` - O(n)
+* `depthFirst()`:
+  * Time: O(n)
+  * Space: O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
